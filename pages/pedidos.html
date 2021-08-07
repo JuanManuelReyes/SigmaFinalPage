@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="PEDIDOS, PEDIR, DELIVERY">
+    <meta name="description" content="Realiza el pedido de tu funda personalizada de forma rapida y segura1">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../fonts/Montserrat-Regular.ttf">
+    <link rel="stylesheet" href="../booststrap/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="icon" href="../media/page-Elements/icon.png">
+    <title>Pedidos - Sigma</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="headerDiv">
+            <div class="headerLogo">
+                <a href="../index.html" class="headerLogo-a"><img src="../media/page-Elements/Logotipo Sigma PNG.png" alt=""
+                        class="headerLogo-img"></a>
+            </div>
+            <div class="headerNav paginas">
+                <ul class="headerNav-ul">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../pages/catalogo.html">CATALOGO</a></li>
+                    <li><a href="#">PEDIDOS</a></li>
+                    <li><a href="../pages/preguntas.html">PREGUNTAS FRECUENTES</a></li>
+                    <li><a href="../pages/sobremi.html">SOBRE MI</a></li>
+                    <li><a href="../pages/soporte.html">SOPORTE</a></li>
+                </ul>
+            </div>
+            <div class="menuIcon"><i class="fas fa-bars menu-btn"></i></div>
+        </div>
+    </header>
+    <div class="headerBorder"></div>
+
+    <!--Formulario para brindar soporte-->
+
+    <div class="conteinerFormularioPedidos">
+        <h1>Complete el Formulario de su Pedido</h1>
+        <form class="formularioPedidos">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nombre Completo *</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div><br>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Correo Electronico *</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                <div id="emailHelp" class="form-text">Tu correo electronico no sera compartido con terceros.</div>
+            </div><br>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Numero Telefonico *</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                <div id="emailHelp" class="form-text">Tu numero telefonico no sera compartido con terceros.</div>
+            </div><br>
+            <label for="form-select">Elije el Producto que Deseas *</label>
+            <select class="form-select" aria-label="Default select example" required>
+                <option value="1">Blue Ocean</option>
+                <option value="2">Deep Galaxy</option>
+                <option value="3">Gold Shine</option>
+                <option value="4">Green Waves</option>
+                <option value="5">Sigma Clasic</option>
+                <option value="6">Collar para Mascota</option>
+                <option value="7">Funda Personalizada</option>
+            </select><br>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    placeholder="En caso de ser necesario explicanos aqui, en pocas palabras, como deseas tu producto."></textarea>
+            </div><br>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Si deseas puedes adjuntar una imagen de referencia.</label>
+                <input class="form-control" type="file" id="formFile">
+            </div><br>
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">¿Ya eres cliente de Sigma?</label>
+            </div><br>
+            <p>Una vez recibamos tu pedido nos comunicaremos para que puedas efectuar el pago y podamos coordinar el
+                envio! <br> Los elementos que poseen un asterisco (*) son obligatorios para efectuar el pedido.</p> <br>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <div class="footerBorder"></div>
+   <!-- Footer -->
+   <footer class="footer" id="footer">
+    <a href="../index.html" class=""><img class="footerLogo" src="../media/page-Elements/Logotipo Sigma PNG.png"></a>
+    <div class="footerItemDiv">
+        <ul class="footerItem paginas">
+            <li>
+                <a href="../index.html">HOME </i></a>
+            </li>
+            <i class="fas fa-circle"></i>
+            <li>
+                <a href="../pages/catalogo.html">CATALOGO </i></a>
+            </li>
+            <i class="fas fa-circle"></i>
+            <li>
+                <a href="#">PEDIDO </i></a>
+            </li>
+            <i class="fas fa-circle"></i>
+            <li>
+                <a href="../pages/preguntas.html">PREGUNTAS FRECUENTES </i></a>
+            </li>
+            <i class="fas fa-circle"></i>
+            <li>
+                <a href="../pages/sobremi.html">SOBRE MI </i></a>
+            </li>
+            <i class="fas fa-circle"></i>
+            <li>
+                <a href="../pages/soporte.html">SOPORTE</a>
+            </li>
+        </ul>
+    </div>
+    <div class="footerCopyRight">
+        <p><i class="far fa-copyright"></i> All Right Reserved <a class="footerCyberTec" target="blank"
+                href="https://instagram.com/cybertec.uy"> CyberTec <img class="logoCyberTec"
+                    src="../media/page-Elements/Logo PNG.png" alt="CyberTec"></a></p>
+    </div>
+</footer>
+    <!--Scripts-->
+    <script src="../js/script.js"></script>
+    <script src="https://kit.fontawesome.com/9acf944361.js" crossorigin="anonymous"></script>
+    <script src="../booststrap/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+</body>
+
+</html>
