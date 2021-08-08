@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+    <!-- Marcado -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Info -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="SOPORTE, AYUDA, ATENCION, CLIENTE">
     <meta name="description"
         content="En Sigma brindamos soporte personalizado a cada uno de nuestros clientes, ustedes son la prioridad!">
-    <link rel="stylesheet" href="../styles/styles.css">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../styles/styles.scss">
     <link rel="stylesheet" href="../fonts/Montserrat-Regular.ttf">
     <link rel="stylesheet" href="../booststrap/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <!-- Icono -->
     <link rel="icon" href="../media/page-Elements/icon.png">
+    <!-- Titulo -->
     <title>Soporte - Sigma</title>
 </head>
 
@@ -20,8 +24,8 @@
     <header class="header">
         <div class="headerDiv">
             <div class="headerLogo">
-                <a href="../index.html" class="headerLogo-a"><img src="../media/page-Elements/Logotipo Sigma PNG.png" alt=""
-                        class="headerLogo-img"></a>
+                <a href="../index.html" class="headerLogo-a"><img src="../media/page-Elements/Logotipo Sigma PNG.png"
+                        alt="" class="headerLogo-img"></a>
             </div>
             <div class="headerNav paginas">
                 <ul class="headerNav-ul">
@@ -33,7 +37,9 @@
                     <li><a href="#">SOPORTE</a></li>
                 </ul>
             </div>
-            <div class="menuIcon"><i class="fas fa-bars menu-btn"></i></div>
+            <div class="menuIcon">
+                <div class="boton-off"><i class="fas fa-bars menu-btn"></i></div>
+            </div>
         </div>
     </header>
     <div class="headerBorder"></div>
@@ -78,27 +84,29 @@
     <div class="footerBorder"></div>
     <!-- Footer -->
     <footer class="footer" id="footer">
-        <a href="../index.html" class=""><img class="footerLogo" src="../media/page-Elements/Logotipo Sigma PNG.png"></a>
+        <div class="footerLogoDiv"><a href="../index.html" class=""><img class="footerLogo"
+                    src="../media/page-Elements/Logotipo Sigma PNG.png"></a>
+        </div>
         <div class="footerItemDiv">
             <ul class="footerItem paginas">
                 <li>
-                    <a href="../index.html">HOME </i></a>
+                    <a href="../index.html">HOME</a>
                 </li>
                 <i class="fas fa-circle"></i>
                 <li>
-                    <a href="../pages/catalogo.html">CATALOGO </i></a>
+                    <a href="../pages/catalogo.html">CATALOGO</a>
                 </li>
                 <i class="fas fa-circle"></i>
                 <li>
-                    <a href="../pages/pedidos.html">PEDIDO </i></a>
+                    <a href="../pages/pedidos.html">PEDIDO</a>
                 </li>
                 <i class="fas fa-circle"></i>
                 <li>
-                    <a href="../pages/preguntas.html">PREGUNTAS FRECUENTES </i></a>
+                    <a href="../pages/preguntas.html">PREGUNTAS FRECUENTES</a>
                 </li>
                 <i class="fas fa-circle"></i>
                 <li>
-                    <a href="../pages/sobremi.html">SOBRE MI </i></a>
+                    <a href="../pages/sobremi.html">SOBRE MI</a>
                 </li>
                 <i class="fas fa-circle"></i>
                 <li>
@@ -112,11 +120,18 @@
                         src="../media/page-Elements/Logo PNG.png" alt="CyberTec"></a></p>
         </div>
     </footer>
+
     <!--Scripts-->
-    <script src="../js/script.js"></script>
+    <!-- Icons -->
     <script src="https://kit.fontawesome.com/9acf944361.js" crossorigin="anonymous"></script>
-    <script src="../booststrap/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <!-- Bootstrap -->
+    <script src="../ooststrap/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Main JS -->
+    <script src="../js/script.js"></script>
+    <script src="../js/btnMenu.js"></script>
+
 </body>
 
 </html>
