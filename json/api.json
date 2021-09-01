@@ -1,0 +1,32 @@
+[
+    {
+      "precio": 500,
+      "id": 1,
+      "title": "Sigma Clasic",
+      "thumbnailUrl": "../media/Catalogo-BySigma/Sigma Clasic.jpg"
+    },
+    {
+      "precio": 500,
+      "id": 2,
+      "title": "Blue Ocean",
+      "thumbnailUrl": "../media/Catalogo-BySigma/Blue Ocean.jpg"
+    },
+    {
+      "precio": 500,
+      "id": 3,
+      "title": "Deep Galaxy",
+      "thumbnailUrl": "../media/Catalogo-BySigma/Deep Galaxy.jpg"
+    },
+    {
+      "precio": 500,
+      "id": 4,
+      "title": "Gold Shine",
+      "thumbnailUrl": "../media/Catalogo-BySigma/Gold Shine.jpg"
+    },
+    {
+      "precio": 500,
+      "id": 5,
+      "title": "Green Waves",
+      "thumbnailUrl": "../media/Catalogo-BySigma/Green Waves.jpg"
+    }
+  ]
