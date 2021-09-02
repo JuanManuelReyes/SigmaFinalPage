@@ -1,32 +1,63 @@
 [
     {
-      "precio": 500,
+      "precio": 450,
       "id": 1,
       "title": "Sigma Clasic",
       "thumbnailUrl": "../media/Catalogo-BySigma/Sigma Clasic.jpg"
     },
     {
-      "precio": 500,
+      "precio": 450,
       "id": 2,
       "title": "Blue Ocean",
       "thumbnailUrl": "../media/Catalogo-BySigma/Blue Ocean.jpg"
     },
     {
-      "precio": 500,
+      "precio": 450,
       "id": 3,
       "title": "Deep Galaxy",
       "thumbnailUrl": "../media/Catalogo-BySigma/Deep Galaxy.jpg"
     },
     {
-      "precio": 500,
+      "precio": 450,
       "id": 4,
       "title": "Gold Shine",
       "thumbnailUrl": "../media/Catalogo-BySigma/Gold Shine.jpg"
     },
     {
-      "precio": 500,
+      "precio": 450,
       "id": 5,
       "title": "Green Waves",
       "thumbnailUrl": "../media/Catalogo-BySigma/Green Waves.jpg"
+    },
+    {
+      "precio": 550,
+      "id": 6,
+      "title": "Funda con Flores Secas",
+      "thumbnailUrl": "../media/cases/1 (9).jpg"
+    },
+    {
+      "precio": 600,
+      "id": 7,
+      "title": "Funda Personalizada",
+      "thumbnailUrl": "../media/cases/1 (4).jpg"
+    },
+    {
+      "precio": 300,
+      "id": 8,
+      "title": "Broches",
+      "thumbnailUrl": "../media/accesorios/1 (2).jpg"
+    },
+    {
+      "precio": 350,
+      "id": 9,
+      "title": "Collares para Mascota",
+      "thumbnailUrl": "../media/accesorios/1 (9).jpg"
+    },
+    {
+      "precio": 250,
+      "id": 10,
+      "title": "Llaveros",
+      "thumbnailUrl": "../media/accesorios/1 (7).jpg"
     }
+    
   ]
