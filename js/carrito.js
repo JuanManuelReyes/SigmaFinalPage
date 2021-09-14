@@ -1,3 +1,4 @@
+//Toma de Elementos
 const cards = document.getElementById("cards");
 const items = document.getElementById("items");
 const footer = document.getElementById("footer");
@@ -8,32 +9,36 @@ const fragment = document.createDocumentFragment();
 
 let carrito = {};
 
+//Event Listener DOM
 document.addEventListener("DOMContentLoaded", () => {
   fetchData();
-  if(localStorage.getItem('carrito')){
-    carrito = JSON.parse(localStorage.getItem('carrito'));
-    pintarCarrito();
+  if (localStorage.getItem("carrito")) {
+    carrito = JSON.parse(localStorage.getItem("carrito"));
+    mostrarCarrito();
   }
 });
+
 cards.addEventListener("click", (e) => {
   addCarrito(e);
 });
 
-items.addEventListener('click', e => {
+items.addEventListener("click", (e) => {
   btnCant(e);
-})
+});
 
+//Toma de datos del Api
 const fetchData = async () => {
   try {
     const res = await fetch("../json/api.json");
     const data = await res.json();
-    pintarCards(data);
+    mostrarCards(data);
   } catch (error) {
     console.log(error);
   }
 };
 
-const pintarCards = (data) => {
+//Funcion para mostrar las Cards (Productos)
+const mostrarCards = (data) => {
   data.forEach((producto) => {
     templateCard.querySelector("h5").textContent = producto.title;
     templateCard.querySelector("p").textContent = producto.precio;
@@ -47,13 +52,16 @@ const pintarCards = (data) => {
   cards.appendChild(fragment);
 };
 
+//Funcion para establecer el carrito
 const addCarrito = (e) => {
   if (e.target.classList.contains("btn-dark")) {
     setCarrito(e.target.parentElement);
   }
   e.stopPropagation();
+  confirmarAgregacion();
 };
 
+//Funcion para setear el carrito
 const setCarrito = (objeto) => {
   const producto = {
     id: objeto.querySelector(".btn-dark").dataset.id,
@@ -65,69 +73,107 @@ const setCarrito = (objeto) => {
     producto.cantidad = carrito[producto.id].cantidad + 1;
   }
   carrito[producto.id] = { ...producto };
-  pintarCarrito();
+  mostrarCarrito();
 };
 
-const pintarCarrito = () =>{
-    items.innerHTML = '';
-    Object.values(carrito).forEach(producto => {
-        templateCarrito.querySelector('th').textContent = producto.id;
-        templateCarrito.querySelectorAll('td')[0].textContent = producto.title;
-        templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad;
-        templateCarrito.querySelector('.btn-info').dataset.id = producto.id;
-        templateCarrito.querySelector('.btn-danger').dataset.id = producto.id;
-        templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio;
+//Funcion para Mostrar el Carrito
+const mostrarCarrito = () => {
+  items.innerHTML = "";
+  Object.values(carrito).forEach((producto) => {
+    templateCarrito.querySelector("th").textContent = producto.id;
+    templateCarrito.querySelectorAll("td")[0].textContent = producto.title;
+    templateCarrito.querySelectorAll("td")[1].textContent = producto.cantidad;
+    templateCarrito.querySelector(".btn-info").dataset.id = producto.id;
+    templateCarrito.querySelector(".btn-danger").dataset.id = producto.id;
+    templateCarrito.querySelector("span").textContent =
+      producto.cantidad * producto.precio;
 
-        const clone = templateCarrito.cloneNode(true);
-        fragment.appendChild(clone);
-    })
-    items.appendChild(fragment);
-
-    pintarFooter();
-    localStorage.setItem('carrito',JSON.stringify(carrito));
-}
-
-const pintarFooter = () =>{
-    footer.innerHTML='';
-    if(Object.keys(carrito).length === 0){
-      footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`;
-
-      return;
-    }
-
-    const nCantidad = Object.values(carrito).reduce((acc,{cantidad})=> acc + cantidad,0);
-    const nPrecio = Object.values(carrito).reduce((acc,{cantidad,precio})=> acc + cantidad * precio,0);
-
-    templateFooter.querySelectorAll('td')[0].textContent = nCantidad;
-    templateFooter.querySelector('span').textContent = nPrecio;
-
-    const clone = templateFooter.cloneNode(true);
+    const clone = templateCarrito.cloneNode(true);
     fragment.appendChild(clone);
-    footer.appendChild(fragment);
+  });
+  items.appendChild(fragment);
 
-    const btnVaciar = document.getElementById('vaciar-carrito');
-    btnVaciar.addEventListener('click',()=>{
-      carrito={};
-      pintarCarrito();
-    })
-}
+  mostrarTabla();
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+};
 
-const btnCant = e => {
-  if(e.target.classList.contains('btn-info')){
-    const producto = carrito[e.target.dataset.id];
-    producto.cantidad++;
-    carrito[e.target.dataset.id]={...producto};
-    pintarCarrito();
+//Funcion para mostrar tabla del Carrito
+const mostrarTabla = () => {
+  footer.innerHTML = "";
+  if (Object.keys(carrito).length === 0) {
+    footer.innerHTML = `<th scope="row" colspan="5">Su Carrito está Vacío - Comienza a Comprar!</th>`;
+
+    return;
   }
 
-  if(e.target.classList.contains('btn-danger')){
+  const nCantidad = Object.values(carrito).reduce(
+    (acc, { cantidad }) => acc + cantidad,
+    0
+  );
+  const nPrecio = Object.values(carrito).reduce(
+    (acc, { cantidad, precio }) => acc + cantidad * precio,
+    0
+  );
+
+  templateFooter.querySelectorAll("td")[0].textContent = nCantidad;
+  templateFooter.querySelector("span").textContent = nPrecio;
+
+  const clone = templateFooter.cloneNode(true);
+  fragment.appendChild(clone);
+  footer.appendChild(fragment);
+
+  const btnVaciar = document.getElementById("vaciar-carrito");
+  btnVaciar.addEventListener("click", () => {
+    carrito = {};
+    mostrarCarrito();
+    confirmarVaciar();
+  });
+};
+
+//Funcion para agregar o quitar items al carrito
+const btnCant = (e) => {
+  if (e.target.classList.contains("btn-info")) {
+    const producto = carrito[e.target.dataset.id];
+    producto.cantidad++;
+    carrito[e.target.dataset.id] = { ...producto };
+    mostrarCarrito();
+    confirmarAgregacion();
+  }
+
+  if (e.target.classList.contains("btn-danger")) {
     const producto = carrito[e.target.dataset.id];
     producto.cantidad--;
-    if(producto.cantidad==0){
+    if (producto.cantidad == 0) {
       delete carrito[e.target.dataset.id];
     }
-    pintarCarrito();
+    mostrarCarrito();
   }
 
   e.stopPropagation;
+};
+
+//Funcion para alertar al sumar Items a tu carrito
+function confirmarAgregacion() {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+
+  Toast.fire({
+    icon: "success",
+    title: "¡Su producto fue agregado Correctamente!",
+  });
 }
+
+//Funcion para alertar al vaciar todo el carrito
+function confirmarVaciar() {
+  Swal.fire({
+    icon: "error",
+    title: "Que Pena :(",
+    text: "Tu carrito de Compras se ha vaciado Correctamente...",
+    footer: "¡Esperamos poder ayudarte la Proxima!",
+  });
+}
+
